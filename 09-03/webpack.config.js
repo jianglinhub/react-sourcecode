@@ -12,7 +12,13 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015'],
+          // 可以直接写class  不用写 className
+          plugins: ['react-html-attrs']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__local___[hash:base64:5]'
       }
     ]
   },
